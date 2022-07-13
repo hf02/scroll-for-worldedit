@@ -18,7 +18,7 @@
 		"client": [
 			"com.github.hf02.scrollForWorldEdit.client.ScrollForWorldEditClient"
 		],
-		"mixins": ["modid.mixins.json"]
+		"mixins": ["scroll_for_worldedit.mixins.json"]
 	},
 
 	"depends": {
