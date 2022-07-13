@@ -29,6 +29,7 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (keyBinding.isPressed()) {
 				client.player.sendCommand("/move 1 -s");
+				client.player.sendCommand(Double.toString(client.mouse.getX()));
 			}
 		});
 	}

@@ -4,7 +4,7 @@
 	"package": "com.github.hf02.scrollForWorldEdit.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [],
-	"client": ["MouseWheelMixin"],
+	"client": ["MouseWheelMixi"],
 	"server": [],
 	"injectors": {
 		"defaultRequire": 1
