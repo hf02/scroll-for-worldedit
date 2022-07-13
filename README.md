@@ -1,1 +1,1 @@
-# Scroll for Worldedit
+# Scroll for WorldEdit

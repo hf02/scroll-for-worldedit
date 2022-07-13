@@ -1,4 +1,4 @@
-package com.github.hf02.scrollForWorldedit;
+package com.github.hf02.scrollForWorldEdit;
 
 import org.lwjgl.glfw.GLFW;
 
@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 
-public class ScrollForWorldeditClient implements ClientModInitializer {
+public class ScrollForWorldEditClient implements ClientModInitializer {
 
 	// The KeyBinding declaration and registration are commonly executed here
 	// statically
@@ -17,12 +17,12 @@ public class ScrollForWorldeditClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		ScrollForWorldedit.LOGGER.info("active...");
+		ScrollForWorldEdit.LOGGER.info("active...");
 		keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.scroll_for_worldedit.spook",
+				"key.scroll_for_worldedit.move",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_LEFT_CONTROL,
-				"key.scroll_for_worldedit.move"));
+				"key.scroll_for_worldedit.main"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (keyBinding.wasPressed()) {

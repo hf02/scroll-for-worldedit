@@ -3,7 +3,7 @@
 	"id": "scroll_for_worldedit",
 	"version": "0.0.0",
 
-	"name": "Scroll for Worldedit",
+	"name": "Scroll for WorldEdit",
 	"description": "Use the mouse wheel to move your selections and builds!",
 	"authors": ["hf02"],
 	"contact": {
@@ -14,9 +14,9 @@
 	"license": "MIT",
 	"environment": "*",
 	"entrypoints": {
-		"main": ["com.github.hf02.scrollForWorldedit.ScrollForWorldedit"]
+		"main": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit"]
 	},
-	"client": ["com.github.hf02.scrollForWorldedit.ScrollForWorldeditClient"],
+	"client": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEditClient"],
 
 	"depends": {
 		"fabricloader": ">=0.14.6",
