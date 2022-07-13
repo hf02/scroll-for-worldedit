@@ -1,6 +1,8 @@
-package com.github.hf02.scrollForWorldEdit;
+package com.github.hf02.scrollForWorldEdit.client;
 
 import org.lwjgl.glfw.GLFW;
+
+import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -25,8 +27,9 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 				"key.scroll_for_worldedit.main"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (keyBinding.wasPressed()) {
-				client.player.sendChatMessage("//move 1 -s");
+			client.mouse
+			if (keyBinding.isPressed()) {
+				client.player.sendCommand("/move 1 -s");
 			}
 		});
 	}
