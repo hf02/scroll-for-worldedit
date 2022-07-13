@@ -14,9 +14,11 @@
 	"license": "MIT",
 	"environment": "*",
 	"entrypoints": {
-		"main": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit"]
+		"main": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit"],
+		"client": [
+			"com.github.hf02.scrollForWorldEdit.client.ScrollForWorldEditClient"
+		]
 	},
-	"client": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEditClient"],
 
 	"depends": {
 		"fabricloader": ">=0.14.6",
