@@ -6,7 +6,11 @@
 	"name": "Scroll for Worldedit",
 	"description": "Use the mouse wheel to move your selections and builds!",
 	"authors": ["hf02"],
-	"contact": {},
+	"contact": {
+		"issues": "https://github.com/hf02/scroll-for-worldedit/issues",
+		"homepage": "https://github.com/hf02/scroll-for-worldedit/",
+		"sources": "https://github.com/hf02/scroll-for-worldedit/"
+	},
 
 	"license": "MIT",
 
