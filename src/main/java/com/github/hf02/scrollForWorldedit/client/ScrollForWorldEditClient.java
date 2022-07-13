@@ -11,6 +11,9 @@ import org.lwjgl.glfw.GLFW;
 public class ScrollForWorldEditClient implements ClientModInitializer {
 
 	private static KeyBinding moveKey;
+	private static KeyBinding contractKey;
+	private static KeyBinding expandKey;
+	private static KeyBinding shiftKey;
 	private MouseScrollHandler mouseHandler = new MouseScrollHandler();
 
 	@Override
@@ -21,15 +24,52 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 				new KeyBinding(
 					"key.scroll_for_worldedit.move",
 					InputUtil.Type.KEYSYM,
-					GLFW.GLFW_KEY_LEFT_CONTROL,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main"
+				)
+			);
+		contractKey =
+			KeyBindingHelper.registerKeyBinding(
+				new KeyBinding(
+					"key.scroll_for_worldedit.contract",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main"
+				)
+			);
+		expandKey =
+			KeyBindingHelper.registerKeyBinding(
+				new KeyBinding(
+					"key.scroll_for_worldedit.expand",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main"
+				)
+			);
+		shiftKey =
+			KeyBindingHelper.registerKeyBinding(
+				new KeyBinding(
+					"key.scroll_for_worldedit.shift",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
 					"key.scroll_for_worldedit.main"
 				)
 			);
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
+			mouseHandler.capturingScroll = false;
+			final int scrollTaken = mouseHandler.takeScroll();
 			if (moveKey.isPressed()) {
-				client.player.sendCommand("/move 1 -s");
-				client.player.sendCommand(Double.toString(client.mouse.getX()));
+				mouseHandler.capturingScroll = true;
+				if (scrollTaken > 0) {
+					client.player.sendCommand(
+						String.format("/move %s -s", scrollTaken)
+					);
+				} else if (scrollTaken < 0) {
+					client.player.sendCommand(
+						String.format("/move %s back -s", -scrollTaken)
+					);
+				}
 			}
 		});
 	}
