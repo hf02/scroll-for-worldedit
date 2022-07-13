@@ -10,7 +10,7 @@ import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 
 @Mixin(Mouse.class)
 public class MouseWheelMixin {
-	@Inject(at = @At("HEAD"), method = "onMouseScroll()", cancellable = true)
+	@Inject(at = @At("HEAD"), method = "onMouseScroll()V", cancellable = true)
 	private void onMouseScroll(CallbackInfo info) {
 		ScrollForWorldEdit.LOGGER.info("This line is printed by an example mod mixin!");
 	}
