@@ -16,7 +16,7 @@
 	"entrypoints": {
 		"main": ["com.github.hf02.scrollForWorldedit.ScrollForWorldedit"]
 	},
-	"mixins": ["scroll_for_worldedit.mixins.json"],
+	"client": ["com.github.hf02.scrollForWorldedit.ScrollForWorldeditClient"],
 
 	"depends": {
 		"fabricloader": ">=0.14.6",
