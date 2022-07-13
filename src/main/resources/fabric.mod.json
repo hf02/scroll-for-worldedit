@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "scroll_for_worldedit",
+	"version": "${version}",
+
+	"name": "Scroll for Worldedit",
+	"description": "Use the mouse wheel to move your selections and builds!",
+	"authors": ["hf02"],
+	"contact": {},
+
+	"license": "MIT",
+
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.github.hf02.scrollForWorldedit.ScrollForWorldedit"]
+	},
+	"mixins": ["scroll_for_worldedit.mixins.json"],
+
+	"depends": {
+		"fabricloader": ">=0.14.6",
+		"fabric": "*",
+		"minecraft": "~1.19",
+		"java": ">=17"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
