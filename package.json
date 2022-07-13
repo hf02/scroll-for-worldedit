@@ -1,11 +1,6 @@
 {
-	"devDependencies": {
-		"prettier": "^2.7.1",
-		"prettier-plugin-java": "^1.6.2"
-	},
-	"prettier": {
-		"prettier.tabWidth": 4,
-		"prettier.useTabs": true,
-		"prettier.trailingComma": "all"
-	}
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-java": "^1.6.2"
+  }
 }
