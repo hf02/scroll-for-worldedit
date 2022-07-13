@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "scroll_for_worldedit",
-	"version": "${version}",
+	"version": "0.0.0",
 
 	"name": "Scroll for Worldedit",
 	"description": "Use the mouse wheel to move your selections and builds!",
@@ -11,9 +11,7 @@
 		"homepage": "https://github.com/hf02/scroll-for-worldedit/",
 		"sources": "https://github.com/hf02/scroll-for-worldedit/"
 	},
-
 	"license": "MIT",
-
 	"environment": "*",
 	"entrypoints": {
 		"main": ["com.github.hf02.scrollForWorldedit.ScrollForWorldedit"]
@@ -27,6 +25,6 @@
 		"java": ">=17"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"worldedit": "*"
 	}
 }
