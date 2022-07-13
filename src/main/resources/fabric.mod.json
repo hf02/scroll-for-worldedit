@@ -17,9 +17,9 @@
 		"main": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit"],
 		"client": [
 			"com.github.hf02.scrollForWorldEdit.client.ScrollForWorldEditClient"
-		],
-		"mixins": ["scroll_for_worldedit.mixins.json"]
+		]
 	},
+	"mixins": ["scroll_for_worldedit.mixins.json"],
 
 	"depends": {
 		"fabricloader": ">=0.14.6",
