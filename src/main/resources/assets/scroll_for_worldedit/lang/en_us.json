@@ -17,6 +17,6 @@
 	"text.autoconfig.scroll_for_worldedit.title": "Scroll for WorldEdit",
 	"text.autoconfig.scroll_for_worldedit.option.scrollThresholdY": "Vertical scroll threshold",
 	"text.autoconfig.scroll_for_worldedit.option.scrollThresholdX": "Horizontal scroll threshold",
-	"text.autoconfig.scroll_for_worldedit.option.verticalLook": "Vertical look",
+	"text.autoconfig.scroll_for_worldedit.option.verticalLook": "Vertical look to move",
 	"text.autoconfig.scroll_for_worldedit.option.verticalLook.@Tooltip": "Enables looking up and down\nto move the selection."
 }
