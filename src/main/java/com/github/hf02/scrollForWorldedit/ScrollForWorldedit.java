@@ -19,6 +19,6 @@ public class ScrollForWorldEdit implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Scroll for WorldEdit");
+		LOGGER.info("Scroll for WorldEdit :)");
 	}
 }

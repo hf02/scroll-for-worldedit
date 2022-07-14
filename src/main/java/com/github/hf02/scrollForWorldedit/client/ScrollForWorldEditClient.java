@@ -21,7 +21,6 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		this.keyManager = new KeyManager(this);
-		ScrollForWorldEdit.LOGGER.info("active...");
 
 		AutoConfig.register(
 			ScrollForWorldEditConfig.class,
