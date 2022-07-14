@@ -17,6 +17,9 @@
 		"main": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit"],
 		"client": [
 			"com.github.hf02.scrollForWorldEdit.client.ScrollForWorldEditClient"
+		],
+		"modmenu": [
+			"com.github.hf02.scrollForWorldEdit.config.ModMenuIntegration"
 		]
 	},
 	"mixins": ["scroll_for_worldedit.mixins.json"],

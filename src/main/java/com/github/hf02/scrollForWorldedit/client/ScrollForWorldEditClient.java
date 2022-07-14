@@ -1,6 +1,9 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
 import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
+import com.github.hf02.scrollForWorldEdit.config.ScrollForWorldEditConfig;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
@@ -8,150 +11,68 @@ import net.minecraft.text.Text;
 
 public class ScrollForWorldEditClient implements ClientModInitializer {
 
-	public final KeyManager keyHandler = new KeyManager(this);
+	public KeyManager keyManager;
 
 	public static TextRenderer textRenderer = new TextRenderer();
 	public MinecraftClient client;
 	public final MouseScrollHandler mouseHandler = new MouseScrollHandler();
+	public static ScrollForWorldEditConfig config;
 
 	@Override
 	public void onInitializeClient() {
+		this.keyManager = new KeyManager(this);
 		ScrollForWorldEdit.LOGGER.info("active...");
+
+		AutoConfig.register(
+			ScrollForWorldEditConfig.class,
+			JanksonConfigSerializer::new
+		);
+		config =
+			AutoConfig
+				.getConfigHolder(ScrollForWorldEditConfig.class)
+				.getConfig();
+
 		client = MinecraftClient.getInstance();
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player == null) return;
 
 			mouseHandler.capturingScroll =
-				keyHandler.modeKey.isPressed() || keyHandler.useKey.isPressed();
+				keyManager.modeKey.isPressed() || keyManager.useKey.isPressed();
 			textRenderer.shouldRenderText = mouseHandler.capturingScroll;
 
-			final int scrollTakenY = mouseHandler.takeScrollY();
-			final int scrollTakenX = mouseHandler.takeScrollX();
+			final TakeScroll scrollTaken = mouseHandler.takeScroll();
 
-			if (keyHandler.modeKey.isPressed()) {
-				keyHandler.setActiveKey(
-					keyHandler.getActiveKeyIndex() - scrollTakenY
+			if (keyManager.modeKey.isPressed()) {
+				keyManager.setActiveKey(
+					(int) (keyManager.getActiveKeyIndex() - scrollTaken.scrollY)
 				);
 			} else {
-				if (keyHandler.isKeyActive("move")) {
-					mouseHandler.capturingScroll = true;
-					if (scrollTakenY > 0) {
-						client.player.sendCommand(
-							String.format(
-								"/move %s %s -s",
-								scrollTakenY,
-								getTextDirection()
-							)
-						);
-					} else if (scrollTakenY < 0) {
-						client.player.sendCommand(
-							String.format(
-								"/move %s %s -s",
-								-scrollTakenY,
-								getTextDirection(true)
-							)
-						);
-					}
-					if (scrollTakenX > 0) {
-						client.player.sendCommand(
-							String.format(
-								"/move %s %s -s",
-								scrollTakenX,
-								getTextDirection(-90, 0)
-							)
-						);
-					} else if (scrollTakenX < 0) {
-						client.player.sendCommand(
-							String.format(
-								"/move %s %s -s",
-								-scrollTakenX,
-								getTextDirection(90, 0)
-							)
-						);
-					}
-				}
-				if (keyHandler.isKeyActive("expand")) {
-					mouseHandler.capturingScroll = true;
-					if (scrollTakenY != 0) {
-						client.player.sendCommand(
-							String.format(
-								"/expand %s %s",
-								scrollTakenY,
-								getTextDirection()
-							)
-						);
-					}
-					if (scrollTakenX != 0) {
-						client.player.sendCommand(
-							String.format(
-								"/expand %s %s",
-								scrollTakenX,
-								getTextDirection(-90, 0)
-							)
-						);
-					}
-				}
-				if (keyHandler.isKeyActive("contract")) {
-					mouseHandler.capturingScroll = true;
-					if (scrollTakenY != 0) {
-						client.player.sendCommand(
-							String.format(
-								"/contract %s %s",
-								scrollTakenY,
-								getTextDirection()
-							)
-						);
-					}
-					if (scrollTakenX != 0) {
-						client.player.sendCommand(
-							String.format(
-								"/contract %s %s",
-								scrollTakenX,
-								getTextDirection(-90, 0)
-							)
-						);
-					}
-				}
-				if (keyHandler.isKeyActive("shift")) {
-					mouseHandler.capturingScroll = true;
-					if (scrollTakenY != 0) {
-						client.player.sendCommand(
-							String.format(
-								"/shift %s %s",
-								scrollTakenY,
-								getTextDirection()
-							)
-						);
-					}
-					if (scrollTakenX != 0) {
-						client.player.sendCommand(
-							String.format(
-								"/shift %s %s",
-								scrollTakenX,
-								getTextDirection(-90, 0)
-							)
-						);
-					}
-				}
+				keyManager.processKeys(scrollTaken);
 			}
 
 			textRenderer.text =
 				Text.translatable(
 					"scroll_for_worldedit.hud_selector",
-					Text.translatable(keyHandler.getActiveKey().name),
-					keyHandler.getActiveKeyIndex() + 1,
-					keyHandler.count
+					Text.translatable(keyManager.getActiveKey().name),
+					keyManager.getActiveKeyIndex() + 1,
+					keyManager.count
 				);
 		});
 	}
 
-	public String getTextDirection(float rotationX, float rotationY) {
-		if (inRange(rotationX, 60, 90)) {
-			return "down";
-		}
-		if (inRange(rotationX, -90, -60)) {
-			return "up";
+	public String getTextDirection(
+		float rotationX,
+		float rotationY,
+		boolean forceVerticalLook
+	) {
+		if (config.verticalLook || forceVerticalLook) {
+			if (inRange(rotationX, 60, 90)) {
+				return "down";
+			}
+			if (inRange(rotationX, -90, -60)) {
+				return "up";
+			}
 		}
 		if (inRange(rotationY, 0, 45) || inRange(rotationY, 315, 360)) {
 			return "south";
@@ -166,6 +87,10 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 			return "east";
 		}
 		return "me";
+	}
+
+	public String getTextDirection(float rotationX, float rotationY) {
+		return getTextDirection(rotationX, rotationY, false);
 	}
 
 	public String getTextDirection(boolean reverse) {

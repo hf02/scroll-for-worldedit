@@ -1,6 +1,5 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
-import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 import net.minecraft.util.ActionResult;
 
 public class MouseScrollHandler {
@@ -11,21 +10,25 @@ public class MouseScrollHandler {
 
 	public boolean capturingScroll = false;
 
-	public double scrollThresholdY = 1;
-	public double scrollThresholdX = 1;
-
 	public int takeScrollY() {
 		int scrolled = 0;
+		if (ScrollForWorldEditClient.config.scrollThresholdY <= 0) {
+			ScrollForWorldEditClient.config.scrollThresholdY = 1;
+		}
 		while (true) {
 			final double scrollLeftRounded =
-				scrollThresholdY * Math.floor(scrollLeftY / scrollThresholdY);
-			if (scrollLeftY == 0) {
+				ScrollForWorldEditClient.config.scrollThresholdY *
+				Math.floor(
+					scrollLeftY /
+					ScrollForWorldEditClient.config.scrollThresholdY
+				);
+			if (scrollLeftRounded == 0) {
 				break;
 			} else if (scrollLeftRounded > 0) {
-				scrollLeftY -= scrollThresholdY;
+				scrollLeftY -= ScrollForWorldEditClient.config.scrollThresholdY;
 				scrolled++;
 			} else {
-				scrollLeftY += scrollThresholdY;
+				scrollLeftY += ScrollForWorldEditClient.config.scrollThresholdY;
 				scrolled--;
 			}
 		}
@@ -34,16 +37,23 @@ public class MouseScrollHandler {
 
 	public int takeScrollX() {
 		int scrolled = 0;
+		if (ScrollForWorldEditClient.config.scrollThresholdX <= 0) {
+			ScrollForWorldEditClient.config.scrollThresholdX = 1;
+		}
 		while (true) {
 			final double scrollLeftRounded =
-				scrollThresholdY * Math.floor(scrollLeftX / scrollThresholdX);
-			if (scrollLeftX == 0) {
+				ScrollForWorldEditClient.config.scrollThresholdY *
+				Math.floor(
+					scrollLeftX /
+					ScrollForWorldEditClient.config.scrollThresholdX
+				);
+			if (scrollLeftRounded == 0) {
 				break;
 			} else if (scrollLeftRounded > 0) {
-				scrollLeftX -= scrollThresholdX;
+				scrollLeftX -= ScrollForWorldEditClient.config.scrollThresholdX;
 				scrolled++;
 			} else {
-				scrollLeftX += scrollThresholdX;
+				scrollLeftX += ScrollForWorldEditClient.config.scrollThresholdX;
 				scrolled--;
 			}
 		}

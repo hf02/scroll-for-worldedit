@@ -2,10 +2,10 @@ package com.github.hf02.scrollForWorldEdit.client;
 
 public class TakeScroll {
 
-	public final double scrollX;
-	public final double scrollY;
+	public final int scrollX;
+	public final int scrollY;
 
-	TakeScroll(double scrollX, double scrollY) {
+	TakeScroll(int scrollX, int scrollY) {
 		this.scrollX = scrollX;
 		this.scrollY = scrollY;
 	}

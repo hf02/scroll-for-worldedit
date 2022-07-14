@@ -1,6 +1,5 @@
 package com.github.hf02.scrollForWorldEdit.mixin;
 
-import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 import com.github.hf02.scrollForWorldEdit.client.MouseScrollCallback;
 import net.minecraft.client.Mouse;
 import net.minecraft.util.ActionResult;

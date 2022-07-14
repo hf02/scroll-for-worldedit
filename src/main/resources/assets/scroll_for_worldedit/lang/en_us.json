@@ -12,5 +12,11 @@
 	"scroll_for_worldedit.mode.move": "//move",
 	"scroll_for_worldedit.mode.expand": "//expand",
 	"scroll_for_worldedit.mode.contract": "//contract",
-	"scroll_for_worldedit.mode.shift": "//shift"
+	"scroll_for_worldedit.mode.shift": "//shift",
+
+	"text.autoconfig.scroll_for_worldedit.title": "Scroll for WorldEdit",
+	"text.autoconfig.scroll_for_worldedit.option.scrollThresholdY": "Vertical scroll threshold",
+	"text.autoconfig.scroll_for_worldedit.option.scrollThresholdX": "Horizontal scroll threshold",
+	"text.autoconfig.scroll_for_worldedit.option.verticalLook": "Vertical look",
+	"text.autoconfig.scroll_for_worldedit.option.verticalLook.@Tooltip": "Enables looking up and down\nto move the selection up and down."
 }

@@ -9,52 +9,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class KeyManager {
 
-	private Key[] keys = {
-		new Key(
-			this,
-			"move",
-			"/move %s %s -s",
-			"scroll_for_worldedit.mode.move",
-			"key.scroll_for_worldedit.move",
-			InputUtil.Type.KEYSYM,
-			GLFW.GLFW_KEY_UNKNOWN,
-			"key.scroll_for_worldedit.main",
-			this::runNonNegativeMove
-		),
-		new Key(
-			this,
-			"expand",
-			"/expand %s %s",
-			"scroll_for_worldedit.mode.expand",
-			"key.scroll_for_worldedit.expand",
-			InputUtil.Type.KEYSYM,
-			GLFW.GLFW_KEY_UNKNOWN,
-			"key.scroll_for_worldedit.main",
-			this::runMove
-		),
-		new Key(
-			this,
-			"contract",
-			"/contract %s %s",
-			"scroll_for_worldedit.mode.contract",
-			"key.scroll_for_worldedit.contract",
-			InputUtil.Type.KEYSYM,
-			GLFW.GLFW_KEY_UNKNOWN,
-			"key.scroll_for_worldedit.main",
-			this::runMove
-		),
-		new Key(
-			this,
-			"shift",
-			"/shift %s %s",
-			"scroll_for_worldedit.mode.shift",
-			"key.scroll_for_worldedit.shift",
-			InputUtil.Type.KEYSYM,
-			GLFW.GLFW_KEY_UNKNOWN,
-			"key.scroll_for_worldedit.main",
-			this::runMove
-		),
-	};
+	private Key[] keys;
 
 	public final int count;
 
@@ -106,8 +61,55 @@ public class KeyManager {
 	public final ScrollForWorldEditClient scrollClient;
 
 	public KeyManager(ScrollForWorldEditClient scrollForWorldEditClient) {
-		count = keys.length;
 		this.scrollClient = scrollForWorldEditClient;
+		keys =
+			new Key[] {
+				new Key(
+					this,
+					"move",
+					"/move %s %s -s",
+					"scroll_for_worldedit.mode.move",
+					"key.scroll_for_worldedit.move",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main",
+					this::runNonNegativeMove
+				),
+				new Key(
+					this,
+					"expand",
+					"/expand %s %s",
+					"scroll_for_worldedit.mode.expand",
+					"key.scroll_for_worldedit.expand",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main",
+					this::runMove
+				),
+				new Key(
+					this,
+					"contract",
+					"/contract %s %s",
+					"scroll_for_worldedit.mode.contract",
+					"key.scroll_for_worldedit.contract",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main",
+					this::runMove
+				),
+				new Key(
+					this,
+					"shift",
+					"/shift %s %s",
+					"scroll_for_worldedit.mode.shift",
+					"key.scroll_for_worldedit.shift",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll_for_worldedit.main",
+					this::runMove
+				),
+			};
+		count = keys.length;
 		setActiveKey(0);
 	}
 
@@ -161,7 +163,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					scroll.scrollX,
-					scrollClient.getTextDirection(-90, 0)
+					scrollClient.getTextDirection(-90, 0, true)
 				)
 			);
 		} else if (scroll.scrollX < 0) {
@@ -169,7 +171,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					-scroll.scrollX,
-					scrollClient.getTextDirection(90, 0)
+					scrollClient.getTextDirection(90, 0, true)
 				)
 			);
 		}
@@ -191,7 +193,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					scroll.scrollX,
-					scrollClient.getTextDirection(-90, 0)
+					scrollClient.getTextDirection(-90, 0, true)
 				)
 			);
 		}
