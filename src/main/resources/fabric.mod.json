@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "scroll_for_worldedit",
-	"version": "0.0.0",
+	"version": "1.0.0",
 
 	"name": "Scroll for WorldEdit",
 	"description": "Use the mouse wheel to move your selections and builds!",
