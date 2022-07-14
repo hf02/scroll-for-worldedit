@@ -29,6 +29,14 @@ public class KeyManager {
 			"key.scroll_for_worldedit.main"
 		)
 	);
+	public final KeyBinding modifierKey = KeyBindingHelper.registerKeyBinding(
+		new KeyBinding(
+			"key.scroll_for_worldedit.modifier",
+			InputUtil.Type.KEYSYM,
+			GLFW.GLFW_KEY_LEFT_SHIFT,
+			"key.scroll_for_worldedit.main"
+		)
+	);
 
 	private Optional<Key> getKey(String code) {
 		for (Key key : keys) {
@@ -145,7 +153,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					scroll.scrollY,
-					scrollClient.getTextDirection()
+					scrollClient.primaryTextDirection()
 				)
 			);
 		} else if (scroll.scrollY < 0) {
@@ -153,7 +161,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					-scroll.scrollY,
-					scrollClient.getTextDirection(true)
+					scrollClient.primaryTextDirection(true)
 				)
 			);
 		}
@@ -163,7 +171,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					scroll.scrollX,
-					scrollClient.getTextDirection(-90, 0, true)
+					scrollClient.secondaryTextDirection()
 				)
 			);
 		} else if (scroll.scrollX < 0) {
@@ -171,7 +179,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					-scroll.scrollX,
-					scrollClient.getTextDirection(90, 0, true)
+					scrollClient.secondaryTextDirection(true)
 				)
 			);
 		}
@@ -183,7 +191,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					scroll.scrollY,
-					scrollClient.getTextDirection()
+					scrollClient.primaryTextDirection()
 				)
 			);
 		}
@@ -193,7 +201,7 @@ public class KeyManager {
 				String.format(
 					key.command,
 					scroll.scrollX,
-					scrollClient.getTextDirection(-90, 0, true)
+					scrollClient.secondaryTextDirection()
 				)
 			);
 		}

@@ -1,5 +1,6 @@
 package com.github.hf02.scrollForWorldEdit.config;
 
+import com.github.hf02.scrollForWorldEdit.client.TextDirectionType;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
@@ -11,8 +12,12 @@ public class ScrollForWorldEditConfig implements ConfigData {
 
 	public float scrollThresholdX = 1;
 
-	@ConfigEntry.Gui.Tooltip
-	public boolean verticalLook = true;
+	public TextDirectionType primaryDirection = TextDirectionType.Normal;
+	public TextDirectionType primaryDirectionModifier =
+		TextDirectionType.Vertical;
+	public TextDirectionType secondaryDirection = TextDirectionType.Sideways;
+	public TextDirectionType secondaryDirectionModifier =
+		TextDirectionType.Sideways;
 
 	@Override
 	public void validatePostLoad() {

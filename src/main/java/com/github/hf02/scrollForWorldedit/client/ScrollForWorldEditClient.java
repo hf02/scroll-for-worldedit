@@ -1,5 +1,6 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
+import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 import com.github.hf02.scrollForWorldEdit.config.ScrollForWorldEditConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -62,9 +63,9 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 	public String getTextDirection(
 		float rotationX,
 		float rotationY,
-		boolean forceVerticalLook
+		boolean allowVerticalLook
 	) {
-		if (config.verticalLook || forceVerticalLook) {
+		if (allowVerticalLook) {
 			if (inRange(rotationX, 60, 90)) {
 				return "down";
 			}
@@ -88,25 +89,95 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 	}
 
 	public String getTextDirection(float rotationX, float rotationY) {
-		return getTextDirection(rotationX, rotationY, false);
-	}
-
-	public String getTextDirection(boolean reverse) {
-		if (reverse) {
-			float rotationX = -(client.player.getRotationClient().x) % 180;
-			float rotationY = (client.player.getRotationClient().y + 180) % 360;
-			if (rotationY < 0) rotationY += 360;
-			return getTextDirection(rotationX, rotationY);
-		} else {
-			float rotationX = (client.player.getRotationClient().x) % 180;
-			float rotationY = (client.player.getRotationClient().y) % 360;
-			if (rotationY < 0) rotationY += 360;
-			return getTextDirection(rotationX, rotationY);
-		}
+		return getTextDirection(rotationX, rotationY, true);
 	}
 
 	public String getTextDirection() {
-		return getTextDirection(false);
+		return getTextDirection(getRotX(false), getRotY(false));
+	}
+
+	public String getTextDirection(
+		TextDirectionType directionType,
+		boolean reverse
+	) {
+		float rotationX = getRotX(reverse);
+		float rotationY = getRotY(reverse);
+		switch (directionType) {
+			case Normal:
+				return getTextDirection(rotationX, rotationY);
+			case Horizontal:
+				return getTextDirection(rotationX, rotationY, false);
+			case Sideways:
+				return getTextDirection(
+					rotationX,
+					getRotY(rotationY + 90, false)
+				);
+			case SidewaysHorizontal:
+				return getTextDirection(
+					rotationX,
+					getRotY(rotationY + 90, false),
+					false
+				);
+			case Vertical:
+				return getTextDirection(reverse ? 90 : -90, 0);
+			default:
+				return getTextDirection(rotationX, rotationY);
+		}
+	}
+
+	public String getTextDirection(TextDirectionType directionType) {
+		return getTextDirection(directionType, false);
+	}
+
+	public String primaryTextDirection(boolean reverse) {
+		TextDirectionType directionType = config.primaryDirection;
+		if (this.keyManager.modifierKey.isPressed()) {
+			directionType = config.primaryDirectionModifier;
+		}
+		return getTextDirection(directionType, reverse);
+	}
+
+	public String primaryTextDirection() {
+		return primaryTextDirection(false);
+	}
+
+	public String secondaryTextDirection(boolean reverse) {
+		TextDirectionType directionType = config.secondaryDirection;
+		if (this.keyManager.modifierKey.isPressed()) {
+			directionType = config.secondaryDirectionModifier;
+		}
+		return getTextDirection(directionType, reverse);
+	}
+
+	public String secondaryTextDirection() {
+		return secondaryTextDirection(false);
+	}
+
+	public float getRotX(float rotation, boolean reverse) {
+		if (reverse) {
+			return -(rotation) % 180;
+		} else {
+			return (rotation) % 180;
+		}
+	}
+
+	public float getRotX(boolean reverse) {
+		return getRotY(client.player.getRotationClient().x, reverse);
+	}
+
+	public float getRotY(float rotation, boolean reverse) {
+		float rotationY;
+		if (reverse) {
+			rotationY = (rotation + 180) % 360;
+		} else {
+			rotationY = rotation % 360;
+		}
+		if (rotationY < 0) rotationY += 360;
+		return rotationY;
+	}
+
+	public float getRotY(boolean reverse) {
+		return getRotY(client.player.getRotationClient().y, reverse);
 	}
 
 	private boolean inRange(double number, double min, double max) {
