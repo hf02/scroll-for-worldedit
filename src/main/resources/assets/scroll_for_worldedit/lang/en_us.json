@@ -1,4 +1,16 @@
 {
 	"key.scroll_for_worldedit.main": "Scroll for WorldEdit",
-	"key.scroll_for_worldedit.move": "Move contents and selection"
+	"key.scroll_for_worldedit.use": "Use selected mode",
+	"key.scroll_for_worldedit.mode": "Scroll through modes",
+	"key.scroll_for_worldedit.move": "//move",
+	"key.scroll_for_worldedit.expand": "//expand",
+	"key.scroll_for_worldedit.contract": "//contract",
+	"key.scroll_for_worldedit.shift": "//shift",
+
+	"scroll_for_worldedit.hud_selector": "%s (%s/%s)",
+
+	"scroll_for_worldedit.mode.move": "//move",
+	"scroll_for_worldedit.mode.expand": "//expand",
+	"scroll_for_worldedit.mode.contract": "//contract",
+	"scroll_for_worldedit.mode.shift": "//shift"
 }
