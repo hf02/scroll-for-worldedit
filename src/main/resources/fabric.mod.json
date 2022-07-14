@@ -32,6 +32,7 @@
 		"fabric-key-binding-api-v1": "*",
 		"cloth-config": ">=7.0.73"
 	},
+	"icon": "assets/scroll_for_worldedit/icon.png",
 	"suggests": {
 		"modmenu": "*"
 	}
