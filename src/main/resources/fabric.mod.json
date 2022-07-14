@@ -32,6 +32,6 @@
 		"fabric-key-binding-api-v1": "*"
 	},
 	"suggests": {
-		"worldedit": "*"
+		"modmenu": "*"
 	}
 }
