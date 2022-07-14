@@ -1,6 +1,5 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
-import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 import com.github.hf02.scrollForWorldEdit.config.ScrollForWorldEditConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
