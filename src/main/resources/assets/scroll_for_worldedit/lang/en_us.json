@@ -6,6 +6,7 @@
 	"key.scroll_for_worldedit.expand": "//expand",
 	"key.scroll_for_worldedit.contract": "//contract",
 	"key.scroll_for_worldedit.shift": "//shift",
+	"key.scroll_for_worldedit.modifier": "Alternate scrolling (hold)",
 
 	"scroll_for_worldedit.hud_selector": "%s (%s/%s)",
 
@@ -17,6 +18,9 @@
 	"text.autoconfig.scroll_for_worldedit.title": "Scroll for WorldEdit",
 	"text.autoconfig.scroll_for_worldedit.option.scrollThresholdY": "Vertical scroll threshold",
 	"text.autoconfig.scroll_for_worldedit.option.scrollThresholdX": "Horizontal scroll threshold",
-	"text.autoconfig.scroll_for_worldedit.option.verticalLook": "Vertical look to move",
-	"text.autoconfig.scroll_for_worldedit.option.verticalLook.@Tooltip": "Enables looking up and down\nto move the selection."
+	"text.autoconfig.scroll_for_worldedit.option.primaryDirection.@PrefixText": "Normal: Look where to move.\nHorizontal: Like normal, but locked horizontally.\nVertical: Moves only up and down.\nSideways: Like normal, but sideways.\nSidewaysHorizontal: Like horizontal, but sideways.",
+	"text.autoconfig.scroll_for_worldedit.option.primaryDirection": "Vertical scrolling",
+	"text.autoconfig.scroll_for_worldedit.option.primaryDirectionModifier": "Vertical scrolling (alternate)",
+	"text.autoconfig.scroll_for_worldedit.option.secondaryDirection": "Horizontal scrolling",
+	"text.autoconfig.scroll_for_worldedit.option.secondaryDirectionModifier": "Horizontal scrolling (alternate)"
 }

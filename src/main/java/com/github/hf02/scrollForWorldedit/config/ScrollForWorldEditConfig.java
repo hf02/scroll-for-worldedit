@@ -12,12 +12,16 @@ public class ScrollForWorldEditConfig implements ConfigData {
 
 	public float scrollThresholdX = 1;
 
+	@ConfigEntry.Gui.PrefixText
 	public TextDirectionType primaryDirection = TextDirectionType.Normal;
+
 	public TextDirectionType primaryDirectionModifier =
 		TextDirectionType.Vertical;
+
 	public TextDirectionType secondaryDirection = TextDirectionType.Sideways;
+
 	public TextDirectionType secondaryDirectionModifier =
-		TextDirectionType.Sideways;
+		TextDirectionType.Vertical;
 
 	@Override
 	public void validatePostLoad() {
