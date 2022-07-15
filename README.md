@@ -1,4 +1,4 @@
-# Scroll for WorldEdit
+# ![](src/main/resources/assets/scroll_for_worldedit/icon.png) Scroll for WorldEdit
 
 Use the mouse wheel to move your selections and builds!
 
@@ -6,10 +6,8 @@ Requires the [Fabric API](https://modrinth.com/mod/fabric-api/) and the [Cloth C
 
 I'm new to Java and modding, so just bear with me on that.
 
-## Features
-
-https://user-images.githubusercontent.com/55464333/178904524-71f17fbf-a46c-4eea-bde7-1f7be7381c15.mp4
+https://user-images.githubusercontent.com/55464333/179122349-6b80a4b0-426a-48a7-b6e3-759def0fcae4.mp4
 
 - Use the mouse wheel to manipulate `//move`, `//shift`, `//expand`, and `//contract`.
-- Hold down `ctrl` to change the command, or give a command its own keybind.
-- Horizontal scrolling only moves up and down, so you don't have to look away to move something vertically.
+- Change the mode by holding down `ctrl` (rebindable) and scrolling, or give each command its own keybind.
+- Choose how vertical and horizontal scrolling moves something. You can also set alternative movements using a modifer key (default is `z`).
