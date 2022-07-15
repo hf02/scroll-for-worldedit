@@ -29,11 +29,12 @@ public class TextRenderer {
 				text,
 				textPosX,
 				textPosY,
-				0xffffff
+				changingMode ? 0xffffff00 : 0x77ffffff
 			);
 		}
 	}
 
 	public boolean shouldRenderText = true;
+	public boolean changingMode = false;
 	public Text text = Text.literal("...");
 }

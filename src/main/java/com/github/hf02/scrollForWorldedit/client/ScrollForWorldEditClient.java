@@ -46,8 +46,10 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 				keyManager.setActiveKey(
 					(int) (keyManager.getActiveKeyIndex() - scrollTaken.scrollY)
 				);
+				textRenderer.changingMode = true;
 			} else {
 				keyManager.processKeys(scrollTaken);
+				textRenderer.changingMode = false;
 			}
 
 			textRenderer.text =
