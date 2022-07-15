@@ -5,7 +5,7 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@Config(name = "scroll_for_worldedit")
+@Config(name = "scroll-for-worldedit")
 public class ScrollForWorldEditConfig implements ConfigData {
 
 	public float scrollThresholdY = 1;

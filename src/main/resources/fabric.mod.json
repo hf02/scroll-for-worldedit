@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "scroll_for_worldedit",
+	"id": "scroll-for-worldedit",
 	"version": "1.0.0",
 
 	"name": "Scroll for WorldEdit",
@@ -22,7 +22,7 @@
 			"com.github.hf02.scrollForWorldEdit.config.ModMenuIntegration"
 		]
 	},
-	"mixins": ["scroll_for_worldedit.mixins.json"],
+	"mixins": ["scroll-for-worldedit.mixins.json"],
 
 	"depends": {
 		"fabricloader": ">=0.14.6",
@@ -32,7 +32,7 @@
 		"fabric-key-binding-api-v1": "*",
 		"cloth-config": ">=7.0.73"
 	},
-	"icon": "assets/scroll_for_worldedit/icon.png",
+	"icon": "assets/scroll-for-worldedit/icon.png",
 	"suggests": {
 		"modmenu": "*"
 	}

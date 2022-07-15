@@ -54,7 +54,7 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 
 			textRenderer.text =
 				Text.translatable(
-					"scroll_for_worldedit.hud_selector",
+					"scroll-for-worldedit.hud_selector",
 					Text.translatable(keyManager.getActiveKey().name),
 					keyManager.getActiveKeyIndex() + 1,
 					keyManager.count

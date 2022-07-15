@@ -15,26 +15,26 @@ public class KeyManager {
 
 	public final KeyBinding modeKey = KeyBindingHelper.registerKeyBinding(
 		new KeyBinding(
-			"key.scroll_for_worldedit.mode",
+			"key.scroll-for-worldedit.mode",
 			InputUtil.Type.KEYSYM,
 			GLFW.GLFW_KEY_LEFT_CONTROL,
-			"key.scroll_for_worldedit.main"
+			"key.scroll-for-worldedit.main"
 		)
 	);
 	public final KeyBinding useKey = KeyBindingHelper.registerKeyBinding(
 		new KeyBinding(
-			"key.scroll_for_worldedit.use",
+			"key.scroll-for-worldedit.use",
 			InputUtil.Type.KEYSYM,
 			GLFW.GLFW_KEY_LEFT_ALT,
-			"key.scroll_for_worldedit.main"
+			"key.scroll-for-worldedit.main"
 		)
 	);
 	public final KeyBinding modifierKey = KeyBindingHelper.registerKeyBinding(
 		new KeyBinding(
-			"key.scroll_for_worldedit.modifier",
+			"key.scroll-for-worldedit.modifier",
 			InputUtil.Type.KEYSYM,
 			GLFW.GLFW_KEY_Z,
-			"key.scroll_for_worldedit.main"
+			"key.scroll-for-worldedit.main"
 		)
 	);
 
@@ -76,44 +76,44 @@ public class KeyManager {
 					this,
 					"move",
 					"/move %s %s -s",
-					"scroll_for_worldedit.mode.move",
-					"key.scroll_for_worldedit.move",
+					"scroll-for-worldedit.mode.move",
+					"key.scroll-for-worldedit.move",
 					InputUtil.Type.KEYSYM,
 					GLFW.GLFW_KEY_UNKNOWN,
-					"key.scroll_for_worldedit.main",
+					"key.scroll-for-worldedit.main",
 					this::runNonNegativeMove
 				),
 				new Key(
 					this,
 					"expand",
 					"/expand %s %s",
-					"scroll_for_worldedit.mode.expand",
-					"key.scroll_for_worldedit.expand",
+					"scroll-for-worldedit.mode.expand",
+					"key.scroll-for-worldedit.expand",
 					InputUtil.Type.KEYSYM,
 					GLFW.GLFW_KEY_UNKNOWN,
-					"key.scroll_for_worldedit.main",
+					"key.scroll-for-worldedit.main",
 					this::runMove
 				),
 				new Key(
 					this,
 					"contract",
 					"/contract %s %s",
-					"scroll_for_worldedit.mode.contract",
-					"key.scroll_for_worldedit.contract",
+					"scroll-for-worldedit.mode.contract",
+					"key.scroll-for-worldedit.contract",
 					InputUtil.Type.KEYSYM,
 					GLFW.GLFW_KEY_UNKNOWN,
-					"key.scroll_for_worldedit.main",
+					"key.scroll-for-worldedit.main",
 					this::runMove
 				),
 				new Key(
 					this,
 					"shift",
 					"/shift %s %s",
-					"scroll_for_worldedit.mode.shift",
-					"key.scroll_for_worldedit.shift",
+					"scroll-for-worldedit.mode.shift",
+					"key.scroll-for-worldedit.shift",
 					InputUtil.Type.KEYSYM,
 					GLFW.GLFW_KEY_UNKNOWN,
-					"key.scroll_for_worldedit.main",
+					"key.scroll-for-worldedit.main",
 					this::runMove
 				),
 			};

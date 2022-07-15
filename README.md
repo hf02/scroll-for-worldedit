@@ -1,4 +1,4 @@
-# ![](src/main/resources/assets/scroll_for_worldedit/icon.png) Scroll for WorldEdit
+# ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit
 
 Use the mouse wheel to move your selections and builds!
 
