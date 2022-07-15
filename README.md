@@ -6,7 +6,7 @@ Requires the [Fabric API](https://modrinth.com/mod/fabric-api/) and the [Cloth C
 
 I'm new to Java and modding, so just bear with me on that.
 
-https://user-images.githubusercontent.com/55464333/179122349-6b80a4b0-426a-48a7-b6e3-759def0fcae4.mp4
+https://user-images.githubusercontent.com/55464333/179123262-e1927313-00bb-490b-bb6a-a00d0efe30fb.mp4
 
 - Use the mouse wheel to manipulate `//move`, `//shift`, `//expand`, and `//contract`.
 - Change the mode by holding down `ctrl` (rebindable) and scrolling, or give each command its own keybind.
