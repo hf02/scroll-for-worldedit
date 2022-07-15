@@ -33,7 +33,7 @@ public class KeyManager {
 		new KeyBinding(
 			"key.scroll_for_worldedit.modifier",
 			InputUtil.Type.KEYSYM,
-			GLFW.GLFW_KEY_LEFT_SHIFT,
+			GLFW.GLFW_KEY_Z,
 			"key.scroll_for_worldedit.main"
 		)
 	);
