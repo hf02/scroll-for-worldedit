@@ -23,6 +23,9 @@ public class ScrollForWorldEditConfig implements ConfigData {
 	public TextDirectionType secondaryDirectionModifier =
 		TextDirectionType.Vertical;
 
+	@ConfigEntry.Gui.Tooltip
+	public boolean mustHoldUseKeyForModeKey = false;
+
 	@Override
 	public void validatePostLoad() {
 		if (scrollThresholdY <= 0) scrollThresholdY = 1;

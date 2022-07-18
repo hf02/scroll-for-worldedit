@@ -47,6 +47,12 @@ public class KeyManager {
 		return Optional.empty();
 	}
 
+	public boolean isModeKeyActive() {
+		return ScrollForWorldEditClient.config.mustHoldUseKeyForModeKey
+			? modeKey.isPressed() && useKey.isPressed()
+			: modeKey.isPressed();
+	}
+
 	private int activeKeyIndex = 0;
 	private Key activeKey;
 

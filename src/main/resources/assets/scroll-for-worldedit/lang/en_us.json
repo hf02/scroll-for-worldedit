@@ -24,5 +24,7 @@
 	"text.autoconfig.scroll-for-worldedit.option.primaryDirection": "Vertical scrolling",
 	"text.autoconfig.scroll-for-worldedit.option.primaryDirectionModifier": "Vertical scrolling (alternate)",
 	"text.autoconfig.scroll-for-worldedit.option.secondaryDirection": "Horizontal scrolling",
-	"text.autoconfig.scroll-for-worldedit.option.secondaryDirectionModifier": "Horizontal scrolling (alternate)"
+	"text.autoconfig.scroll-for-worldedit.option.secondaryDirectionModifier": "Horizontal scrolling (alternate)",
+	"text.autoconfig.scroll-for-worldedit.option.mustHoldUseKeyForModeKey": "Must hold the use key to activate the mode key",
+	"text.autoconfig.scroll-for-worldedit.option.mustHoldUseKeyForModeKey.@Tooltip": "If enabled, you have to also hold down\nthe use key to scroll through modes."
 }
