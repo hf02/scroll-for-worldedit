@@ -9,7 +9,11 @@
 	"key.scroll-for-worldedit.stack": "//stack",
 	"key.scroll-for-worldedit.modifier": "Alternate scrolling (hold)",
 
-	"scroll-for-worldedit.hud_selector": "%s (%s/%s)",
+	"scroll-for-worldedit.hud_selector_single": "%s (%s/%s)",
+	"scroll-for-worldedit.hud_selector_top_selected": "|",
+	"scroll-for-worldedit.hud_selector_top_unselected": ".",
+	"scroll-for-worldedit.hud_selector_top": "(%2$s/%3$s)",
+	"scroll-for-worldedit.hud_selector_bottom": "%1$s",
 
 	"scroll-for-worldedit.mode.move": "//move",
 	"scroll-for-worldedit.mode.expand": "//expand",

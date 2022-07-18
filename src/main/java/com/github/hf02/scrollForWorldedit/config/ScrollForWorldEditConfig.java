@@ -1,5 +1,6 @@
 package com.github.hf02.scrollForWorldEdit.config;
 
+import com.github.hf02.scrollForWorldEdit.client.StatusTextType;
 import com.github.hf02.scrollForWorldEdit.client.TextDirectionType;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
@@ -28,6 +29,14 @@ public class ScrollForWorldEditConfig implements ConfigData {
 
 	public boolean useKeyToggles = false;
 	public boolean modeKeyToggles = false;
+
+	public StatusTextType singleLineType = StatusTextType.TwoLinedWheel;
+
+	@ConfigEntry.ColorPicker
+	public int wheelSelectedColor = 0xffff00;
+
+	@ConfigEntry.ColorPicker
+	public int wheelUnselectedColor = 0xaaaaaa;
 
 	@ConfigEntry.ColorPicker(allowAlpha = true)
 	public int useColor = 0x77ffffff;

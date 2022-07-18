@@ -7,14 +7,17 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
 
 public class ScrollForWorldEditClient implements ClientModInitializer {
 
 	public KeyManager keyManager;
 
 	public static TextRenderer textRenderer = new TextRenderer();
-	public MinecraftClient client;
+	public static MinecraftClient client;
 	public final MouseScrollHandler mouseHandler = new MouseScrollHandler();
 	public static ScrollForWorldEditConfig config;
 
@@ -52,13 +55,89 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 				textRenderer.changingMode = false;
 			}
 
-			textRenderer.text =
-				Text.translatable(
-					"scroll-for-worldedit.hud_selector",
-					Text.translatable(keyManager.getActiveKey().name),
-					keyManager.getActiveKeyIndex() + 1,
-					keyManager.count
-				);
+			if (textRenderer.shouldRenderText) {
+				switch (config.singleLineType) {
+					case OneLined:
+						textRenderer.text =
+							new Text[] {
+								Text.translatable(
+									"scroll-for-worldedit.hud_selector_single",
+									Text.translatable(
+										keyManager.getActiveKey().name
+									),
+									keyManager.getActiveKeyIndex() + 1,
+									keyManager.count
+								),
+							};
+						break;
+					case TwoLined:
+						textRenderer.text =
+							new Text[] {
+								Text.translatable(
+									"scroll-for-worldedit.hud_selector_top",
+									Text.translatable(
+										keyManager.getActiveKey().name
+									),
+									keyManager.getActiveKeyIndex() + 1,
+									keyManager.count
+								),
+								Text.translatable(
+									"scroll-for-worldedit.hud_selector_bottom",
+									Text.translatable(
+										keyManager.getActiveKey().name
+									),
+									keyManager.getActiveKeyIndex() + 1,
+									keyManager.count
+								),
+							};
+						break;
+					case TwoLinedWheel:
+						MutableText scrollText = Text.empty();
+						int keyIndex = keyManager.getActiveKeyIndex();
+						for (int i = 0; i < keyManager.count; i++) {
+							if (i == keyIndex) {
+								scrollText.append(
+									Text
+										.translatable(
+											"scroll-for-worldedit.hud_selector_top_selected"
+										)
+										.setStyle(
+											Style.EMPTY.withColor(
+												config.wheelSelectedColor
+											)
+										)
+								);
+							} else {
+								scrollText.append(
+									Text
+										.translatable(
+											"scroll-for-worldedit.hud_selector_top_unselected"
+										)
+										.setStyle(
+											Style.EMPTY.withColor(
+												config.wheelUnselectedColor
+											)
+										)
+								);
+							}
+						}
+						textRenderer.text =
+							new Text[] {
+								scrollText,
+								Text.translatable(
+									"scroll-for-worldedit.hud_selector_bottom",
+									Text.translatable(
+										keyManager.getActiveKey().name
+									),
+									keyManager.getActiveKeyIndex() + 1,
+									keyManager.count
+								),
+							};
+						break;
+					default:
+						break;
+				}
+			}
 		});
 	}
 
