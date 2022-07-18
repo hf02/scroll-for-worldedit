@@ -27,6 +27,7 @@ public class ScrollForWorldEditConfig implements ConfigData {
 	public boolean mustHoldUseKeyForModeKey = false;
 
 	public boolean useKeyToggles = false;
+	public boolean modeKeyToggles = false;
 
 	@ConfigEntry.ColorPicker(allowAlpha = true)
 	public int useColor = 0x77ffffff;

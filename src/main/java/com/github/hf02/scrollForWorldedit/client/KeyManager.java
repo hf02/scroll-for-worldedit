@@ -22,6 +22,8 @@ public class KeyManager {
 			"key.scroll-for-worldedit.main"
 		)
 	);
+	private boolean modeKeyToggle = false;
+
 	public final KeyBinding useKey = KeyBindingHelper.registerKeyBinding(
 		new KeyBinding(
 			"key.scroll-for-worldedit.use",
@@ -30,7 +32,6 @@ public class KeyManager {
 			"key.scroll-for-worldedit.main"
 		)
 	);
-
 	private boolean useKeyToggle = false;
 
 	public final KeyBinding modifierKey = KeyBindingHelper.registerKeyBinding(
@@ -58,9 +59,13 @@ public class KeyManager {
 	}
 
 	public boolean isModeKeyActive() {
-		return ScrollForWorldEditClient.config.mustHoldUseKeyForModeKey
-			? modeKey.isPressed() && isUseKeyActive()
+		boolean modeKeyAllowed = ScrollForWorldEditClient.config.mustHoldUseKeyForModeKey
+			? isUseKeyActive()
+			: true;
+		boolean modeKeyPressed = ScrollForWorldEditClient.config.modeKeyToggles
+			? modeKeyToggle
 			: modeKey.isPressed();
+		return modeKeyAllowed && modeKeyPressed;
 	}
 
 	private int activeKeyIndex = 0;
@@ -92,6 +97,12 @@ public class KeyManager {
 				useKeyToggle =
 					ScrollForWorldEditClient.config.useKeyToggles
 						? !useKeyToggle
+						: false;
+			}
+			while (modeKey.wasPressed()) {
+				modeKeyToggle =
+					ScrollForWorldEditClient.config.modeKeyToggles
+						? !modeKeyToggle
 						: false;
 			}
 		});
