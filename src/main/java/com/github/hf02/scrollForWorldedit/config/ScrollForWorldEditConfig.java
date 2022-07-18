@@ -30,7 +30,7 @@ public class ScrollForWorldEditConfig implements ConfigData {
 	public boolean useKeyToggles = false;
 	public boolean modeKeyToggles = false;
 
-	public StatusTextType singleLineType = StatusTextType.TwoLinedWheel;
+	public StatusTextType statusTextType = StatusTextType.TwoLinedWheel;
 
 	@ConfigEntry.ColorPicker
 	public int wheelSelectedColor = 0xffff00;

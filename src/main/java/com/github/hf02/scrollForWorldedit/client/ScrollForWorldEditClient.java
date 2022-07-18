@@ -56,7 +56,7 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 			}
 
 			if (textRenderer.shouldRenderText) {
-				switch (config.singleLineType) {
+				switch (config.statusTextType) {
 					case OneLined:
 						textRenderer.text =
 							new Text[] {
