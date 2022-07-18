@@ -164,7 +164,7 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 	}
 
 	public float getRotX(boolean reverse) {
-		return getRotY(client.player.getRotationClient().x, reverse);
+		return getRotX(client.player.getRotationClient().x, reverse);
 	}
 
 	public float getRotY(float rotation, boolean reverse) {
