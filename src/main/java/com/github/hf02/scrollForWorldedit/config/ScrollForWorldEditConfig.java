@@ -25,10 +25,10 @@ public class ScrollForWorldEditConfig implements ConfigData {
 		TextDirectionType.Vertical;
 
 	@ConfigEntry.Gui.Tooltip
-	public boolean mustHoldUseKeyForModeKey = false;
+	public boolean mustHoldUseKeyForModeKey = true;
 
-	public boolean useKeyToggles = false;
-	public boolean modeKeyToggles = false;
+	public boolean useKeyToggles = true;
+	public boolean modeKeyToggles = true;
 
 	public StatusTextType statusTextType = StatusTextType.TwoLinedWheel;
 
