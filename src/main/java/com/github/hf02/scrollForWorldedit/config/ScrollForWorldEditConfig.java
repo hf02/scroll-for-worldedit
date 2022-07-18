@@ -28,7 +28,7 @@ public class ScrollForWorldEditConfig implements ConfigData {
 	public boolean mustHoldUseKeyForModeKey = true;
 
 	public boolean useKeyToggles = true;
-	public boolean modeKeyToggles = true;
+	public boolean modeKeyToggles = false;
 
 	public StatusTextType statusTextType = StatusTextType.TwoLinedWheel;
 
