@@ -38,7 +38,10 @@
 	"text.autoconfig.scroll-for-worldedit.option.useKeyToggles": "Use key toggles",
 	"text.autoconfig.scroll-for-worldedit.option.modeKeyToggles": "Mode selection key toggles",
 
-	"text.autoconfig.scroll-for-worldedit.option.singleLineType": "",
+	"text.autoconfig.scroll-for-worldedit.option.statusTextType": "Status text type",
+	"text.autoconfig.scroll-for-worldedit.option.wheelSelectedColor": "Selected wheel color",
+	"text.autoconfig.scroll-for-worldedit.option.wheelUnselectedColor": "Unselected wheel color",
+
 	"text.autoconfig.scroll-for-worldedit.option.useColor": "Status text color (using)",
 	"text.autoconfig.scroll-for-worldedit.option.modeColor": "Status text color (selecting mode)"
 }
