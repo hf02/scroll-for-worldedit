@@ -29,7 +29,9 @@ public class TextRenderer {
 				text,
 				textPosX,
 				textPosY,
-				changingMode ? 0xffffff00 : 0x77ffffff
+				changingMode
+					? ScrollForWorldEditClient.config.modeColor
+					: ScrollForWorldEditClient.config.useColor
 			);
 		}
 	}
