@@ -2,6 +2,7 @@ package com.github.hf02.scrollForWorldEdit.client;
 
 import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 import java.util.Optional;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -29,6 +30,9 @@ public class KeyManager {
 			"key.scroll-for-worldedit.main"
 		)
 	);
+
+	private boolean useKeyToggle = false;
+
 	public final KeyBinding modifierKey = KeyBindingHelper.registerKeyBinding(
 		new KeyBinding(
 			"key.scroll-for-worldedit.modifier",
@@ -47,9 +51,15 @@ public class KeyManager {
 		return Optional.empty();
 	}
 
+	public boolean isUseKeyActive() {
+		return ScrollForWorldEditClient.config.useKeyToggles
+			? useKeyToggle
+			: useKey.isPressed();
+	}
+
 	public boolean isModeKeyActive() {
 		return ScrollForWorldEditClient.config.mustHoldUseKeyForModeKey
-			? modeKey.isPressed() && useKey.isPressed()
+			? modeKey.isPressed() && isUseKeyActive()
 			: modeKey.isPressed();
 	}
 
@@ -76,6 +86,16 @@ public class KeyManager {
 
 	public KeyManager(ScrollForWorldEditClient scrollForWorldEditClient) {
 		this.scrollClient = scrollForWorldEditClient;
+
+		ClientTickEvents.END_CLIENT_TICK.register(client -> {
+			while (useKey.wasPressed()) {
+				useKeyToggle =
+					ScrollForWorldEditClient.config.useKeyToggles
+						? !useKeyToggle
+						: false;
+			}
+		});
+
 		keys =
 			new Key[] {
 				new Key(
@@ -146,7 +166,7 @@ public class KeyManager {
 			);
 			return false;
 		}
-		if (useKey.isPressed() && activeKey == key.get()) {
+		if (isUseKeyActive() && activeKey == key.get()) {
 			return true;
 		}
 		return key.get().keybinding.isPressed();

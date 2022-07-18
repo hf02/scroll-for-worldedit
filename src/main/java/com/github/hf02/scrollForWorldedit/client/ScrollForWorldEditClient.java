@@ -37,7 +37,7 @@ public class ScrollForWorldEditClient implements ClientModInitializer {
 			if (client.player == null) return;
 
 			mouseHandler.capturingScroll =
-				keyManager.isModeKeyActive() || keyManager.useKey.isPressed();
+				keyManager.isModeKeyActive() || keyManager.isUseKeyActive();
 			textRenderer.shouldRenderText = mouseHandler.capturingScroll;
 
 			final TakeScroll scrollTaken = mouseHandler.takeScroll();
