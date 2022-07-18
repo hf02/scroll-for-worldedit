@@ -6,6 +6,7 @@
 	"key.scroll-for-worldedit.expand": "//expand",
 	"key.scroll-for-worldedit.contract": "//contract",
 	"key.scroll-for-worldedit.shift": "//shift",
+	"key.scroll-for-worldedit.stack": "//stack",
 	"key.scroll-for-worldedit.modifier": "Alternate scrolling (hold)",
 
 	"scroll-for-worldedit.hud_selector": "%s (%s/%s)",
@@ -14,6 +15,7 @@
 	"scroll-for-worldedit.mode.expand": "//expand",
 	"scroll-for-worldedit.mode.contract": "//contract",
 	"scroll-for-worldedit.mode.shift": "//shift",
+	"scroll-for-worldedit.mode.stack": "//stack",
 
 	"text.autoconfig.scroll-for-worldedit.title": "Scroll for WorldEdit",
 	"text.autoconfig.scroll-for-worldedit.option.scrollThresholdY": "Vertical scroll threshold",

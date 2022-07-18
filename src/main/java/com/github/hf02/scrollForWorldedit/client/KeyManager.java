@@ -116,6 +116,17 @@ public class KeyManager {
 					"key.scroll-for-worldedit.main",
 					this::runMove
 				),
+				new Key(
+					this,
+					"stack",
+					"/stack %s %s -s",
+					"scroll-for-worldedit.mode.stack",
+					"key.scroll-for-worldedit.stack",
+					InputUtil.Type.KEYSYM,
+					GLFW.GLFW_KEY_UNKNOWN,
+					"key.scroll-for-worldedit.main",
+					this::runNonNegativeMove
+				),
 			};
 		count = keys.length;
 		setActiveKey(0);
