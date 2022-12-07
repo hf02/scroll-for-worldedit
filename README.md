@@ -1,5 +1,7 @@
 # ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit (1.19)
 
+[Modrinth](https://modrinth.com/mod/scroll-for-worldedit)
+
 Use the mouse wheel to move your selections and builds!
 
 Requires the [Fabric API](https://modrinth.com/mod/fabric-api/) and the [Cloth Config API](https://modrinth.com/mod/cloth-config). To edit the configuration in-game, use [Mod Menu](https://modrinth.com/mod/modmenu).
