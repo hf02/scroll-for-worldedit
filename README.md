@@ -1,4 +1,4 @@
-# ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit (1.19)
+# ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit (1.19.3)
 
 [Modrinth](https://modrinth.com/mod/scroll-for-worldedit)
 
