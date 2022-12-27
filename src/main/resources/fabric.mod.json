@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "scroll-for-worldedit",
-	"version": "1.1.0",
+	"version": "1.1.1",
 
 	"name": "Scroll for WorldEdit",
 	"description": "Use the mouse wheel to move your selections and builds!",
@@ -30,10 +30,10 @@
 		"minecraft": "~1.19",
 		"java": ">=17",
 		"fabric-key-binding-api-v1": "*",
-		"cloth-config": ">=7.0.73"
+		"cloth-config": ">=9.0.93"
 	},
 	"icon": "assets/scroll-for-worldedit/icon.png",
 	"suggests": {
-		"modmenu": "*"
+		"modmenu": ">=5.0.2"
 	}
 }

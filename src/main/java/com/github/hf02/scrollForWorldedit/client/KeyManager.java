@@ -190,7 +190,7 @@ public class KeyManager {
 	}
 
 	private void sendCommand(String command) {
-		scrollClient.client.player.sendCommand(command);
+		scrollClient.client.player.networkHandler.sendChatCommand(command);
 	}
 
 	// methods to handle Keys
