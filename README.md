@@ -1,6 +1,6 @@
 # ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit (1.19.3)
 
-[Modrinth](https://modrinth.com/mod/scroll-for-worldedit)
+[Modrinth](https://modrinth.com/mod/scroll-for-worldedit) | [Cruseforge](https://www.curseforge.com/minecraft/mc-mods/scroll-for-worldedit)
 
 Use the mouse wheel to move your selections and builds!
 
