@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "scroll-for-worldedit",
-	"version": "1.1.1",
+	"version": "1.1.2",
 
 	"name": "Scroll for WorldEdit",
 	"description": "Use the mouse wheel to move your selections and builds!",
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/hf02/scroll-for-worldedit/"
 	},
 	"license": "MIT",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": ["com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit"],
 		"client": [
@@ -25,15 +25,15 @@
 	"mixins": ["scroll-for-worldedit.mixins.json"],
 
 	"depends": {
-		"fabricloader": ">=0.14.6",
-		"fabric": "*",
-		"minecraft": "1.19.3",
+		"fabricloader": ">=0.14.19",
+		"fabric-api": "*",
+		"minecraft": "1.19.4",
 		"java": ">=17",
 		"fabric-key-binding-api-v1": "*",
-		"cloth-config": ">=9.0.93"
+		"cloth-config": ">=10.0.96"
 	},
 	"icon": "assets/scroll-for-worldedit/icon.png",
 	"suggests": {
-		"modmenu": ">=5.0.2"
+		"modmenu": ">=6.1.0"
 	}
 }
