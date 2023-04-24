@@ -11,6 +11,21 @@ I'm new to Java and modding, so just bear with me on that.
 
 https://user-images.githubusercontent.com/55464333/179123262-e1927313-00bb-490b-bb6a-a00d0efe30fb.mp4
 
-- Use the mouse wheel to manipulate `//move`, `//shift`, `//expand`, `//contract`, and `//stack`.
-- Change which command by holding down `ctrl` (rebindable) and scrolling, or give each command its own keybind.
-- Choose how vertical and horizontal scrolling moves something. You can also set alternative movements using a modifer key (default is `z`).
+-   Supports `//move`, `//expand`, `//contract`, `//shift`, and `//stack`.
+-   To activate the mod, press <kbd>alt</kbd>¹.
+-   To change the command, hold <kbd>ctrl</kbd>² and scroll.
+-   Supports scrolling vertically and horizontally. If those two aren't enough, press <kbd>z</kbd>³ to use another set of directions.
+-   You can also just bind each command to its own keybind.
+-   Also customizable:
+    -   Change the scroll threshold.
+    -   Change the directions stuff moves in.
+    -   Change if buttons are toggleable or have to be held down.
+    -   Change the colors.
+
+---
+
+¹Use selected mode (toggles by default)
+
+²Scroll through modes (hold by default)
+
+³Alternate scrolling (hold)
