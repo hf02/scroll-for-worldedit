@@ -1,13 +1,13 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.Window;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 
 public class TextRenderer {
 
-	public void renderText(MatrixStack matrixStack) {
+	public void renderText(DrawContext context) {
 		int color = changingMode
 			? ScrollForWorldEditClient.config.modeColor
 			: ScrollForWorldEditClient.config.useColor;
@@ -16,7 +16,7 @@ public class TextRenderer {
 				Text line = text[i];
 				if (changingMode || i == text.length - 1) {
 					drawText(
-						matrixStack,
+						context,
 						line,
 						getTextPosX(line),
 						getTextPosY(line, -(text.length - i)),
@@ -28,19 +28,19 @@ public class TextRenderer {
 		}
 	}
 
-	public float getTextPosX(Text text) {
+	public int getTextPosX(Text text) {
 		MinecraftClient client = MinecraftClient.getInstance();
 		Window window = client.getWindow();
-		return (
+		return (int) (
 			(window.getScaledWidth() * 0.5f) -
 			(client.textRenderer.getWidth(text) * 0.5f)
 		);
 	}
 
-	public float getTextPosY(Text text, float offset) {
+	public int getTextPosY(Text text, float offset) {
 		MinecraftClient client = MinecraftClient.getInstance();
 		Window window = client.getWindow();
-		return (
+		return (int) (
 			(window.getScaledHeight() * 0.5f) +
 			(-2 * (float) window.getScaleFactor()) +
 			(client.textRenderer.fontHeight * offset)
@@ -48,27 +48,21 @@ public class TextRenderer {
 	}
 
 	public void drawText(
-		MatrixStack matrixStack,
+		DrawContext context,
 		Text text,
-		float textPosX,
-		float textPosY,
+		int textPosX,
+		int textPosY,
 		int color,
 		boolean shadow
 	) {
 		MinecraftClient client = MinecraftClient.getInstance();
-		matrixStack.push();
-		matrixStack.translate(textPosX, textPosY, 0);
-		matrixStack.scale(1, 1, 1);
-		matrixStack.translate(-textPosX, -textPosY, 0);
-		
-
-		client.textRenderer.draw(
+		context.drawText(
+			client.textRenderer,
 			text,
 			textPosX,
 			textPosY,
 			color,
-			shadow,
-			matrixStack
+			shadow
 		);
 	}
 
