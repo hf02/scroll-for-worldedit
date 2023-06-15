@@ -1,4 +1,4 @@
-# ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit (1.19.4)
+# ![](src/main/resources/assets/scroll-for-worldedit/icon.png) Scroll for WorldEdit (1.20)
 
 [![Modrinth](https://img.shields.io/badge/dynamic/json?color=5da545&label=Modrinth&suffix=%20downloads%20&query=downloads&url=https://api.modrinth.com/api/v1/mod/2Agd6VfX)](https://modrinth.com/mod/scroll-for-worldedit)
 [![Cruseforge](https://img.shields.io/badge/Cruseforge-download-ff784d)](https://www.curseforge.com/minecraft/mc-mods/scroll-for-worldedit)
