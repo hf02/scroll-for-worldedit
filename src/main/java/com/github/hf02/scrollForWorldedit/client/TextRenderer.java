@@ -60,24 +60,16 @@ public class TextRenderer {
 		matrixStack.translate(textPosX, textPosY, 0);
 		matrixStack.scale(1, 1, 1);
 		matrixStack.translate(-textPosX, -textPosY, 0);
+		
 
-		if (shadow) {
-			client.textRenderer.drawWithShadow(
-				matrixStack,
-				text,
-				textPosX,
-				textPosY,
-				color
-			);
-		} else {
-			client.textRenderer.draw(
-				matrixStack,
-				text,
-				textPosX,
-				textPosY,
-				color
-			);
-		}
+		client.textRenderer.draw(
+			text,
+			textPosX,
+			textPosY,
+			color,
+			shadow,
+			matrixStack
+		);
 	}
 
 	public boolean shouldRenderText = true;
