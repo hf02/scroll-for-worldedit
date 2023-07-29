@@ -37,10 +37,10 @@
 		"modmenu": "*"
 	},
 	"custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.modrinth": "https://modrinth.com/mod/scroll-for-worldedit"
-       	}
-  	  }
-  	}
+		"modmenu": {
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/scroll-for-worldedit"
+			}
+		}
+	}
 }
