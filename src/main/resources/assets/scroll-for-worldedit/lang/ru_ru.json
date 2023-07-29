@@ -1,0 +1,47 @@
+{
+	"key.scroll-for-worldedit.main": "Прокрутка для ВорлдЭдита",
+	"key.scroll-for-worldedit.use": "Используйте выбранный режим",
+	"key.scroll-for-worldedit.mode": "Прокрутка режимов",
+	"key.scroll-for-worldedit.move": "//move",
+	"key.scroll-for-worldedit.expand": "//expand",
+	"key.scroll-for-worldedit.contract": "//contract",
+	"key.scroll-for-worldedit.shift": "//shift",
+	"key.scroll-for-worldedit.stack": "//stack",
+	"key.scroll-for-worldedit.modifier": "Альтернативная прокрутка (зажать)",
+
+	"scroll-for-worldedit.hud_selector_single": "%s (%s/%s)",
+	"scroll-for-worldedit.hud_selector_top_selected": "|",
+	"scroll-for-worldedit.hud_selector_top_unselected": ".",
+	"scroll-for-worldedit.hud_selector_top": "(%2$s/%3$s)",
+	"scroll-for-worldedit.hud_selector_bottom": "%1$s",
+
+	"scroll-for-worldedit.mode.move": "//move",
+	"scroll-for-worldedit.mode.expand": "//expand",
+	"scroll-for-worldedit.mode.contract": "//contract",
+	"scroll-for-worldedit.mode.shift": "//shift",
+	"scroll-for-worldedit.mode.stack": "//stack",
+
+	"text.autoconfig.scroll-for-worldedit.title": "Прокрутка для ВорлдЭдита",
+
+	"text.autoconfig.scroll-for-worldedit.option.scrollThresholdY": "Порог вертикальной прокрутки",
+	"text.autoconfig.scroll-for-worldedit.option.scrollThresholdX": "Порог горизонтальной прокрутки",
+
+	"text.autoconfig.scroll-for-worldedit.option.primaryDirection.@PrefixText": "Normal: Смотрите, куда двигаете.\nHorizontal: Как нормальный, но зафиксирован горизонтально.\nVertical: Двигается только вверх и вниз.\nSideways: Как обычно, но боком.\nSidewaysHorizontal: Как горизонтальный, но боком.",
+	"text.autoconfig.scroll-for-worldedit.option.primaryDirection": "Вертикальная прокрутка",
+	"text.autoconfig.scroll-for-worldedit.option.primaryDirectionModifier": "Вертикальная прокрутка (альтернативная)",
+	"text.autoconfig.scroll-for-worldedit.option.secondaryDirection": "Горизонтальная прокрутка",
+	"text.autoconfig.scroll-for-worldedit.option.secondaryDirectionModifier": "Горизонтальная прокрутка (альтернативная)",
+
+	"text.autoconfig.scroll-for-worldedit.option.mustHoldUseKeyForModeKey": "Необходимость держать клавишу использования для активации кнопки выбора режимов",
+	"text.autoconfig.scroll-for-worldedit.option.mustHoldUseKeyForModeKey.@Tooltip": "Если включено, вы также должны удерживать\nклавишу использования для прокрутки режимов,\nвместо просто клавиши выбора режимов.",
+
+	"text.autoconfig.scroll-for-worldedit.option.useKeyToggles": "Переключение кнопки использования",
+	"text.autoconfig.scroll-for-worldedit.option.modeKeyToggles": "Переключение кнопки выбора режимов",
+
+	"text.autoconfig.scroll-for-worldedit.option.statusTextType": "Тип текста статуса",
+	"text.autoconfig.scroll-for-worldedit.option.wheelSelectedColor": "Цвет выбранного колеса",
+	"text.autoconfig.scroll-for-worldedit.option.wheelUnselectedColor": "Цвет невыбранного колеса",
+
+	"text.autoconfig.scroll-for-worldedit.option.useColor": "Цвет текста статуса (использование)",
+	"text.autoconfig.scroll-for-worldedit.option.modeColor": "Цвет текста стутса (выбор режимов)"
+}
