@@ -1,12 +1,13 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
 import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
-import java.util.Optional;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
+
+import java.util.Optional;
 
 public class KeyManager {
 

@@ -1,6 +1,5 @@
 package com.github.hf02.scrollForWorldEdit.client;
 
-import com.github.hf02.scrollForWorldEdit.ScrollForWorldEdit;
 import com.github.hf02.scrollForWorldEdit.config.ScrollForWorldEditConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -10,7 +9,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
 
 public class ScrollForWorldEditClient implements ClientModInitializer {
 
